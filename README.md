@@ -3,4 +3,7 @@
 - <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/5b23a3a3-17f6-4fb0-842f-efdd6d49e834" width="500">
 - 09/14 목 : 리눅스 명령어 / wc / mkdir / rm / find / vi
 - <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/adf10d8b-14a4-4a31-9a57-bb2bdfefc8aa" width="500">
+- 09/15 금 : nano / 퍼미션 / chmod / chown / 조건문 / 반복문 / 별찍기 
+- <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/73b12940-437e-4b4c-90d3-33830da02124" width="500">
+
 
