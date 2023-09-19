@@ -1,0 +1,176 @@
+-- 2021.07.04
+-- 라즈베리파이에 flume 설치
+-- root 권한으로 실행
+--------------------------------
+-- 라즈베리파이 update 및 upgrade
+$ sudo apt-get update 
+$ sudo apt-get upgrade
+
+-- 자바 8 버전 설치
+$ sudo apt-get install oracle-java8-jdk
+
+$ sudo java - version
+$ sudo which java
+
+-- 그룹과 유저 생성
+-- namenode라는 유저를 생성하여 hadoop 그룹에 추가하고, sudo를 부여합니다.
+
+$ sudo addgroup hadoop
+
+$ sudo adduser --ingroup hadoop namenode
+$ sudo adduser namenode sudo
+
+-----------------------------------
+-- flume 다운로드
+
+http://flume.apache.org/download.html
+
+sudo tar -xvf apache-flume-1.9.0-bin.tar.gz -C /usr/local
+
+mv apache-flume-1.9.0-bin /usr/local/
+
+ln -s apache-flume-1.9.0-bin/ flume
+
+
+-- 환경설정
+vi /etc/profile 에 설정추가 
+export FLUME_HOME=/usr/local/flume
+export PATH=$PATH:$FLUME_HOME/bin
+export CLASSPATH=$CLASSPATH:$FLUME_HOME/lib/*.jar
+
+source /etc/profile
+
+cd /usr/local/flume/conf/
+----
+vi ~/.profile 에 설정추가 
+export FLUME_HOME=~/flume
+export PATH=$PATH:$FLUME_HOME/bin
+export CLASSPATH=$CLASSPATH:$FLUME_HOME/lib/*.jar
+
+source /etc/profile
+
+cd /usr/local/flume/conf/
+
+----
+cp flume-env.sh.template flume-env.sh
+
+vi flume-env.sh 에 자바경로 추가
+  export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+-- version 확인
+flume-ng version
+
+-------------
+cp flume-conf.properties.template flume-conf.properties
+
+vi flume-conf.properties 의 내용을 모두 지우고 환경설정 한다.
+agent1.sources = source1
+agent1.sinks = sink1
+agent1.channels = channel1
+
+agent1.sources.source1.channels = channel1
+agent1.sinks.sink1.channel = channel1
+
+agent1.sources.source1.type = spooldir
+agent1.sources.source1.spoolDir = /home/hadoop/working/test
+
+agent1.sinks.sink1.type = logger
+
+agent1.channels.channel1.type = file
+
+---	
+mkdir -p /home/hadoop/working/test	
+
+-----------------------------------
+-- flume 실행..
+cd /usr/local/flume/conf	
+
+flume-ng agent \
+-n agent1 \
+-c $FLUME_HOME/conf \
+-f flume-conf.properties \
+-Dflume.root.logger-INFO, console
+
+flume-ng agent -n SmartCar_Agent -c $FLUME_HOME/conf -f SmartCar_Agent.properties -Dflume.root.logger-INFO, console
+
+-- 새로운 putty 창을 연다.
+
+cd /home/hadoop/working/test
+
+echo "HEllo flume" > ./file1.txt
+
+---- 실행확인
+cd /usr/local/flume/conf/log
+
+vi flume.log 
+
+-----------------------------------
+--- HDFS 싱크이용해서 HDFS에 데이터 적재하기
+
+cd /usr/local/flume/conf
+cp flume-conf.properties spool-to-hdfs.properties
+
+vi spool-to-hdfs.properties 
+	agent1.sources = source1
+	agent1.sinks = sink1
+	agent1.channels = channel1
+
+	agent1.sources.source1.channels = channel1
+	agent1.sinks.sink1.channel = channel1
+
+	agent1.sources.source1.type = spooldir
+	agent1.sources.source1.spoolDir = /home/hadoop/working/test
+
+	agent1.sinks.sink1.type = hdfs
+	agent1.sinks.sink1.hdfs.path = /tmp/flume
+	agent1.sinks.hdfs-sink.rollSize = 268435456
+	agent1.sinks.sink1.hdfs.rollInteval = 0
+	agent1.sinks.sink1.hdfs.rollCount = 0
+	agent1.sinks.sink1.hdfs.filePrefix = events
+	agent1.sinks.sink1.hdfs.fileSuffix = .log
+	agent1.sinks.sink1.hdfs.inUsePrefix = _
+	agent1.sinks.sink1.hdfs.fileType = DataStream
+
+	agent1.channels.channel1.type = file
+
+hadoop dfs -mkdir -p /tmp/flume	
+
+---------------
+-- flume 실행..
+flume-ng agent \
+-n agent1 \
+-c $FLUME_HOME/conf \
+-f spool-to-hdfs.properties \
+-Dflume.root.logger=INFO, console
+
+/**-------------------
+	이때 만약 하둡3버전을 사용하는 경우 
+	~/hadoop/share/hadoop/common/lib/guava-27.0-jre.jar 을 flume lib디렉토리로 복사시켜주고
+	flume lib디렉토리에 있던 기존 guava.jar파일은 이름을 수정해준다.
+--------------------**/
+cd hadoop/share/hadoop/common/lib/
+
+cp guava-27.0-jre.jar /home/hadoop/flume/apache-flume-1.9.0-bin/lib
+
+
+cd
+
+cd flume/lib/
+
+ls guava*
+
+mv guava-11.0.2.jar guava-11.0.2.jar.bak
+
+ls guava*
+
+cd ~/working/test
+
+echo -e "Hello\nAgain\nFlume" > ./.file1.txt
+mv .file1.txt file1.txt
+
+---------------
+-- flume 실행 확인
+
+hadoop fs -ls /flume
+
+hadoop fs -cat /tmp/flume/events.1621329300545.log

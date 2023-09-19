@@ -1,0 +1,50 @@
+-- login(hadoop Kit)
+hadoop/hadoop
+
+----------------------------
+-- 하둡 초기화
+clustercmd rm -rf `ls ./ |grep -v hdfs`
+clustercmd rm -rf /tmp/hadoop-hadoop/*
+clustercmd rm -rf /home/hadoop/hdfs/hadoop_tmp/hdfs/datanode/*
+clustercmd rm -rf /home/hadoop/hdfs/hadoop_tmp/hdfs/namenode/*
+
+hdfs namenode -format
+
+-- 하둡 실행
+start-dfs.sh && start-yarn.sh 
+(=) start-all.sh
+
+-- 하둡 종료
+stop-all.sh
+
+-- 하둡명령어
+hdfs dfs -ls /
+hdfs dfs -mkdir /aysdat
+hdfs dfs -put *.txt /aysdat/
+hdfs dfs -cat /aysdat/alice.txt
+hdfs dfs -cp /aysdat/alice.txt /aysdat/alice2.txt  
+hdfs dfs -mv /aysdat/alice2.txt /aysdat/alice-mv.txt  
+hdfs dfs -rm -r /aysdat/
+hdfs dfs -gat /aysdat/alice-mv.txt  
+
+----------------------------
+-- wordcount 분석을 위한 준비
+1. wordcount 프로그램 작성
+2. sampleData 만들기
+3. wordcount.jar, sampleData 서버에 Upload
+4. 하둡에 sampleData Upload
+
+-- wordcount 실행
+yarn jar mapreduce-0.0.1-SNAPSHOT.jar bigdata.mapreduce.WordCount /aysdat/*.txt /wcnt
+-- 명령어설명
+	1.yarn jar : 하둡에서 jar파일 실행 명령 
+	2.mapreduce-0.0.1-SNAPSHOT.jar  : WordCount 프로그램 패키지
+	3.bigdata.mapreduce.WordCount : 실행할 클래스 파일
+	4./aysdat/*.txt : 분석할 데이터 위치
+	5./wcnt : 분석결과를 보관할 위치
+
+-- 도전!! wordcount 실습
+1.d:\Hadoop\03.WordCount\분석용데이터\wc_data2.txt
+2.파일을 하둡의 /tmp directory에 업로드
+3.wordcount 을 실행하여 결과를 /wc01에 저장하기..
+ 

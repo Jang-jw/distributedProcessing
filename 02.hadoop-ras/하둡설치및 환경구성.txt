@@ -1,0 +1,306 @@
+--------------------
+-- login 
+   hadoop /hadoop
+
+================================
+-- 하둡 설치를 위한 사전 작업(환경구축)
+-- 1. 라즈베리안 Imager 다운로드 및 설치
+	https://www.raspberrypi.com/software/
+	다운로드 혹은 설치폴더에서 실행..
+
+-- 2. SD Card에 쓰기(PC에 설치)
+	3개 SD Card에 라즈베리안 64bit Lite번전 설치
+	
+-- 3. 설치파일 Upload(모든 Node에 Upload)
+-- java설치 파일(모든 Node에 Upload)
+ jdk-8u321-linux-aarch64.tar.gz
+
+-- 하둡설치 파일(master Node에 Upload) 
+ hadoop-3.3.1.tar.gz
+
+--------------------
+-- 2. java 설치(모든 Node에 설치)
+
+sudo mkdir -p /usr/lib/jvm/
+
+sudo tar -xvf ./jdk-8u321-linux-aarch64.tar.gz -C /usr/lib/jvm/
+
+sudo ln -s /usr/lib/jvm/jdk1.8.0_321/jre/bin/java /etc/alternatives/java 
+
+sudo ln -s /etc/alternatives/java /usr/bin/java
+
+-- 설치 확인
+java -version
+
+--------------------
+-- 3.하둡구성 Node들 등록(모든 Node에 등록)
+
+sudo nano /etc/hosts
+
+192.168.50.101  master
+192.168.50.102  worker01
+192.168.50.103  worker02
+
+================================
+-- hadoop 설치
+
+-- 1.하둡구성 Node들 공개키 환경파일 추가(Master 에서만 실행)
+cd ~
+mkdir .ssh
+
+nano ~/.ssh/config
+Host master
+User hadoop
+Hostname 192.168.50.101
+
+Host worker01
+User hadoop
+Hostname 192.168.50.102
+
+Host worker02
+User hadoop
+Hostname 192.168.50.103
+
+--------------------
+--2. SSH공개 키 생성 및 배포
+-- 2-1)ssh 생성- 모든 노드(Master, Worker)에서 실행
+ssh-keygen -t ed25519
+
+-- 2-2)Worker 라즈베리에서만 실행
+cat .ssh/id_ed25519.pub | ssh hadoop@master 'cat >> .ssh/authorized_keys'
+
+-- 2-3)Master 라즈베리에서 실행
+cd
+cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
+
+scp .ssh/authorized_keys worker01:.ssh/authorized_keys
+scp .ssh/authorized_keys worker02:.ssh/authorized_keys
+
+scp .ssh/config worker01:.ssh/config
+scp .ssh/config worker02:.ssh/config
+
+-- 공개키 배포 확인
+ssh worker01
+
+--------------------
+--3. 하둡 경로 설정 및 
+--   마스터에서 다른 라즈베리파이(워커) 조작하기
+-- .bashrc 쉘 설정(Master에서만 작업)
+
+$ nano ~/.bashrc
+
+# 워커들 조작을 위한 Shell 함수
+function workers {
+  grep "worker" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
+}
+
+function clustercmd {
+  for worker in $(workers); do ssh $worker "$@"; done
+  $@
+}
+
+function clusterreboot {
+  clustercmd sudo shutdown -r now
+}
+
+function clustershutdown {
+  clustercmd sudo shutdown now
+}
+
+function clusterscp {
+  for worker in $(workers); do
+    cat $1 | ssh $worker "sudo tee $1" > /dev/null 2>&1
+  done
+}
+
+# 하둡경로 설정
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export HADOOP_HOME=~/hdfs/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+
+export PDSH_RCMD_TYPE=ssh
+
+-----------------
+-- 4. 하둡설치3.3.1
+-- 4-1) 설치 파일 압축해제
+
+mkdir ./hdfs
+tar -xvf hadoop-3.3.1.tar.gz -C /home/hadoop/hdfs/
+
+cd hdfs
+mv hadoop-3.3.1 hadoop
+
+-- 4-2) 하둡 환경 파일에 JAVA_HOME 설정
+$ nano ~/hdfs/hadoop/etc/hadoop/hadoop-env.sh
+  export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+-- 4-3) 확인
+hadoop version | grep Hadoop
+echo $JAVA_HOME
+
+-----------------
+-- 5. 하둡 분산 시스템 설정
+-- <configuration> 사이에 내용을 입력
+-- 5-1) nano ~/hdfs/hadoop/etc/hadoop/core-site.xml
+
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://master:9000</value>
+  </property>
+
+------
+-- 5-2) nano ~/hdfs/hadoop/etc/hadoop/hdfs-site.xml	
+
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/home/hadoop/hdfs/hadoop_tmp/hdfs/datanode</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>/home/hadoop/hdfs/hadoop_tmp/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.replication</name>
+    <value>2</value>
+  </property>
+
+-------
+-- 5-3) nano ~/hdfs/hadoop/etc/hadoop/mapred-site.xml
+
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>\
+  </property>
+  <property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.resource.memory-mb</name>
+    <value>512</value>
+  </property>
+  <property>
+    <name>mapreduce.map.resource.memory-mb</name>
+    <value>256</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.resource.memory-mb</name>
+    <value>256</value>
+  </property>
+
+-------
+-- 5-4) nano ~/hdfs/hadoop/etc/hadoop/yarn-site.xml
+
+  <property>
+    <name>yarn.acl.enable</name>
+    <value>0</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>master</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>3072</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>3072</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>256</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>  
+
+-----------------------
+-- 6. 설정내용 datanode에 복사
+-- 6-1 하둡 복사
+clustercmd mkdir hdfs
+for worker in $(workers); do rsync -avz ${HADOOP_HOME}/ $worker:/home/hadoop/hdfs/hadoop; done
+
+-- 환경 파일 복사
+clusterscp .bashrc
+
+-----------------------
+-- 7. 하둡 설정 파일을 저장하는 공간에 마스터와 워커들에 대한 정보생성
+nano ~/hdfs/hadoop/etc/hadoop/master
+  master
+
+-- 
+nano ~/hdfs/hadoop/etc/hadoop/workers
+  worker01
+  worker02
+
+-----------------------
+-- 8. 다른 라즈베리파이에서 데이터 노드와 네임 노드를 삭제하여 초기화 
+--- 최초실행 시 1회.
+-- -p, -rf 반드시 재입력할것..
+clustercmd mkdir -p /home/hadoop/hdfs/hadoop_tmp/hdfs/datanode/ 
+clustercmd mkdir -p /home/hadoop/hdfs/hadoop_tmp/hdfs/namenode/
+
+clustercmd rm -rf /tmp/hadoop-hadoop/*
+clustercmd rm –rf /home/hadoop/hdfs/hadoop_tmp/hdfs/datanode/*
+clustercmd rm –rf /home/hadoop/hdfs/hadoop_tmp/hdfs/namenode/*
+
+hdfs namenode -format
+
+------------------
+-- 9. 라즈베리파이의 재시작 및 실행
+-- 9-1)재시작
+clusterreboot
+
+--- 9-2)실행.
+start-dfs.sh && start-yarn.sh 
+(=) start-all.sh
+
+-- 9-3)확인
+yarn node –list
+hadoop dfsadmin -report
+
+-- 9-4)Web 실행 확인
+master:9870
+
+------------------
+-- 하둡 명령어 실습
+-- 분석용 파일 Upload
+
+교안 참고  87Page
+ hdfs dfs -ls /
+ hdfs dfs -mkdir /hadp
+ hdfs dfs -put *.txt /hadp
+
+ hdfs dfs -ls /hadp
+ hdfs dfs -cat /hadp/alice.txt
+ hdfs dfs -cp /hadp/alice.txt /hadp/cp_alice.txt  
+ hdfs dfs -mv /hadp/cp_alice.txt /hadp/mv_alice.txt  
+
+ hdfs dfs -get /hadp/mv_alice.txt  
+
+----------------------
+util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager

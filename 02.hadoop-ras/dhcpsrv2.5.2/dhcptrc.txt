@@ -1,0 +1,575 @@
+[03/16/2022 05:22:23] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 05:22:25] recvfrom returns with error 10038
+[03/16/2022 05:22:25] DHCP Server terminated
+[03/16/2022 05:22:25] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 05:22:25] NetworkAdapter Initialization returns 0
+[03/16/2022 05:22:25] Adapter 0 with IP address 127.0.0.1 found but not used
+[03/16/2022 05:22:30] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 05:22:30] recvfrom returns with error 10038
+[03/16/2022 05:22:30] DHCP Server terminated
+[03/16/2022 05:22:30] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 05:22:31] NetworkAdapter Initialization returns 0
+[03/16/2022 05:22:31] Adapter 0 with IP address 192.168.50.40 found but not used
+[03/16/2022 05:22:31] Adapter 1 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:02:23] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:02:23] recvfrom returns with error 10038
+[03/16/2022 06:02:23] DHCP Server terminated
+[03/16/2022 06:02:23] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:02:23] NetworkAdapter Initialization returns 0
+[03/16/2022 06:02:24] Adapter 0 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:02:24] Adapter 1 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:03:08] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:03:08] recvfrom returns with error 10038
+[03/16/2022 06:03:08] DHCP Server terminated
+[03/16/2022 06:03:08] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:03:09] NetworkAdapter Initialization returns 0
+[03/16/2022 06:03:09] Adapter 0 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:03:09] Adapter 1 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:09:38] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:09:38] recvfrom returns with error 10038
+[03/16/2022 06:09:38] DHCP Server terminated
+[03/16/2022 06:09:38] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:09:38] NetworkAdapter Initialization returns 0
+[03/16/2022 06:09:38] Adapter 0 with IP address 192.168.50.50 found (pAdap=0x00d35a00)
+[03/16/2022 06:09:38] Adapter 1 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:09:38] Adapter 2 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:10:37] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:37] DHCP message = DHCPDISCOVER
+[03/16/2022 06:10:37]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:37] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/16/2022 06:10:37] Client E4-5F-01-7F-0E-1F is not configured
+[03/16/2022 06:10:37] Perform auto configuration
+[03/16/2022 06:10:37] IPPOOL_1: 192.168.50.101-254
+[03/16/2022 06:10:37] successfully matching the requested address
+[03/16/2022 06:10:37] Auto configuration succeeded: IP-Addr = 192.168.50.101
+[03/16/2022 06:10:37] Response: offer the configured IP address (lease time = 86400)
+[03/16/2022 06:10:37] Sending a broadcast response to the client
+[03/16/2022 06:10:37] Connection 1: sending top queue packet
+[03/16/2022 06:10:37] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:37] DHCP message = DHCPREQUEST
+[03/16/2022 06:10:37]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:37] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/16/2022 06:10:37] Client E4-5F-01-7F-0E-1F is configured with the IP address 192.168.50.101
+[03/16/2022 06:10:38] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:10:38] Sending a broadcast response to the client
+[03/16/2022 06:10:38] Connection 1: sending top queue packet
+[03/16/2022 06:10:38] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:38] DHCP message = DHCPDISCOVER
+[03/16/2022 06:10:38]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:38] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/16/2022 06:10:38] Client DC-A6-32-A7-E6-9C is not configured
+[03/16/2022 06:10:38] Perform auto configuration
+[03/16/2022 06:10:38] IPPOOL_1: 192.168.50.101-254
+[03/16/2022 06:10:38] Auto configuration succeeded: IP-Addr = 192.168.50.102
+[03/16/2022 06:10:38] Response: offer the configured IP address (lease time = 86400)
+[03/16/2022 06:10:38] Sending a broadcast response to the client
+[03/16/2022 06:10:38] Connection 1: sending top queue packet
+[03/16/2022 06:10:38] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:38] DHCP message = DHCPREQUEST
+[03/16/2022 06:10:38]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:38] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/16/2022 06:10:38] Client DC-A6-32-A7-E6-9C is configured with the IP address 192.168.50.102
+[03/16/2022 06:10:39] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:10:39] Sending a broadcast response to the client
+[03/16/2022 06:10:39] Connection 1: sending top queue packet
+[03/16/2022 06:10:41] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:41] DHCP message = DHCPDISCOVER
+[03/16/2022 06:10:41]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:41] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/16/2022 06:10:41] Client DC-A6-32-56-8C-F9 is not configured
+[03/16/2022 06:10:41] Perform auto configuration
+[03/16/2022 06:10:41] IPPOOL_1: 192.168.50.101-254
+[03/16/2022 06:10:41] Auto configuration succeeded: IP-Addr = 192.168.50.103
+[03/16/2022 06:10:41] Response: offer the configured IP address (lease time = 86400)
+[03/16/2022 06:10:41] Sending a broadcast response to the client
+[03/16/2022 06:10:41] Connection 1: sending top queue packet
+[03/16/2022 06:10:41] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:10:41] DHCP message = DHCPREQUEST
+[03/16/2022 06:10:41]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:10:41] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/16/2022 06:10:41] Client DC-A6-32-56-8C-F9 is configured with the IP address 192.168.50.103
+[03/16/2022 06:10:42] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:10:42] Sending a broadcast response to the client
+[03/16/2022 06:10:42] Connection 1: sending top queue packet
+[03/16/2022 06:16:12] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:16:12] recvfrom returns with error 10038
+[03/16/2022 06:16:12] DHCP Server terminated
+[03/16/2022 06:16:12] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:16:13] NetworkAdapter Initialization returns 0
+[03/16/2022 06:16:13] Adapter 0 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:16:13] Adapter 1 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:16:26] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:16:26] recvfrom returns with error 10038
+[03/16/2022 06:16:26] DHCP Server terminated
+[03/16/2022 06:16:26] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:16:26] NetworkAdapter Initialization returns 0
+[03/16/2022 06:16:26] Adapter 0 with IP address 192.168.50.50 found (pAdap=0x00d35820)
+[03/16/2022 06:16:26] Adapter 1 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:16:26] Adapter 2 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:16:37] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:16:37] DHCP message = DHCPREQUEST
+[03/16/2022 06:16:37]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:16:37] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/16/2022 06:16:37] Client E4-5F-01-7F-0E-1F is configured with the IP address 192.168.50.101
+[03/16/2022 06:16:37] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:16:37] Sending a broadcast response to the client
+[03/16/2022 06:16:37] Connection 1: sending top queue packet
+[03/16/2022 06:16:38] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:16:38] DHCP message = DHCPREQUEST
+[03/16/2022 06:16:38]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:16:38] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/16/2022 06:16:38] Client DC-A6-32-56-8C-F9 is configured with the IP address 192.168.50.103
+[03/16/2022 06:16:38] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:16:38] Sending a broadcast response to the client
+[03/16/2022 06:16:38] Connection 1: sending top queue packet
+[03/16/2022 06:16:39] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:16:39] DHCP message = DHCPREQUEST
+[03/16/2022 06:16:39]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:16:39] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/16/2022 06:16:39] Client DC-A6-32-A7-E6-9C is configured with the IP address 192.168.50.102
+[03/16/2022 06:16:39] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:16:39] Sending a broadcast response to the client
+[03/16/2022 06:16:39] Connection 1: sending top queue packet
+[03/16/2022 06:21:31] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:21:31] recvfrom returns with error 10038
+[03/16/2022 06:21:31] DHCP Server terminated
+[03/16/2022 06:21:31] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:21:31] NetworkAdapter Initialization returns 0
+[03/16/2022 06:21:32] Adapter 0 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:21:32] Adapter 1 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:21:41] DHCP Server is terminating (ignore error messages that follow)
+[03/16/2022 06:21:41] recvfrom returns with error 10038
+[03/16/2022 06:21:41] DHCP Server terminated
+[03/16/2022 06:21:41] DHCP Server V2.5.2.3 started as Service
+[03/16/2022 06:21:42] NetworkAdapter Initialization returns 0
+[03/16/2022 06:21:42] Adapter 0 with IP address 192.168.50.50 found (pAdap=0x00d35a60)
+[03/16/2022 06:21:42] Adapter 1 with IP address 192.168.50.40 found but not used
+[03/16/2022 06:21:42] Adapter 2 with IP address 172.30.1.40 found but not used
+[03/16/2022 06:21:55] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:21:55] DHCP message = DHCPREQUEST
+[03/16/2022 06:21:55]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:21:55] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/16/2022 06:21:55] Client E4-5F-01-7F-0E-1F is configured with the IP address 192.168.50.101
+[03/16/2022 06:21:55] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:21:55] Sending a broadcast response to the client
+[03/16/2022 06:21:55] Connection 1: sending top queue packet
+[03/16/2022 06:21:56] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:21:56] DHCP message = DHCPREQUEST
+[03/16/2022 06:21:56]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:21:56] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/16/2022 06:21:56] Client DC-A6-32-56-8C-F9 is configured with the IP address 192.168.50.103
+[03/16/2022 06:21:56] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:21:56] Sending a broadcast response to the client
+[03/16/2022 06:21:56] Connection 1: sending top queue packet
+[03/16/2022 06:21:56] Adapter 1 has recognized an incoming DHCP request
+[03/16/2022 06:21:56] DHCP message = DHCPREQUEST
+[03/16/2022 06:21:56]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/16/2022 06:21:56] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/16/2022 06:21:56] Client DC-A6-32-A7-E6-9C is configured with the IP address 192.168.50.102
+[03/16/2022 06:21:57] Response: hand out the configured IP address (lease time = 86400)
+[03/16/2022 06:21:57] Sending a broadcast response to the client
+[03/16/2022 06:21:57] Connection 1: sending top queue packet
+[03/17/2022 13:02:08] DHCP Server V2.5.2.3 started as Application
+[03/17/2022 13:02:08] NetworkAdapter Initialization returns 0
+[03/17/2022 13:02:08] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:02:27] DHCP Server V2.5.2.3 started as Service
+[03/17/2022 13:02:27] NetworkAdapter Initialization returns 0
+[03/17/2022 13:02:27] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:03:58] [03/17/2022 13:03:58] DHCP Server is terminating (ignore error messages that follow)
+[03/17/2022 13:03:58] recvfrom returns with error 10038
+[03/17/2022 13:03:58] DHCP Server terminated
+[03/17/2022 13:03:58] recvfrom returns with error 10038
+[03/17/2022 13:03:58] DHCP Server V2.5.2.3 started as Service
+[03/17/2022 13:03:58] DHCP Server terminated
+[03/17/2022 13:03:58] NetworkAdapter Initialization returns 0
+[03/17/2022 13:03:58] DHCP Server V2.5.2.3 started as Application
+[03/17/2022 13:03:58] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:03:58] NetworkAdapter Initialization returns 0
+[03/17/2022 13:03:58] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:04:56] [03/17/2022 13:04:56] DHCP Server is terminating (ignore error messages that follow)
+[03/17/2022 13:04:56] recvfrom returns with error 10038
+[03/17/2022 13:04:56] DHCP Server terminated
+[03/17/2022 13:04:56] recvfrom returns with error 10038
+[03/17/2022 13:04:56] DHCP Server terminated
+[03/17/2022 13:04:56] DHCP Server V2.5.2.3 started as Application
+[03/17/2022 13:04:56] DHCP Server V2.5.2.3 started as Service
+[03/17/2022 13:04:56] NetworkAdapter Initialization returns 0
+[03/17/2022 13:04:56] NetworkAdapter Initialization returns 0
+[03/17/2022 13:04:56] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:04:56] Adapter 0 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:05:32] DHCP Server is terminating (ignore error messages that follow)
+[03/17/2022 13:05:32] recvfrom returns with error 10038
+[03/17/2022 13:05:32] DHCP Server terminated
+[03/17/2022 13:05:32] recvfrom returns with error 10038
+[03/17/2022 13:05:32] DHCP Server V2.5.2.3 started as Service
+[03/17/2022 13:05:32] DHCP Server terminated
+[03/17/2022 13:05:32] NetworkAdapter Initialization returns 0
+[03/17/2022 13:05:32] DHCP Server V2.5.2.3 started as Application
+[03/17/2022 13:05:32] Adapter 0 with IP address 192.168.50.50 found (pAdap=0x00ff12c0)
+[03/17/2022 13:05:32] NetworkAdapter Initialization returns 0
+[03/17/2022 13:05:32] Adapter 1 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:05:32] Adapter 0 with IP address 192.168.50.50 found (pAdap=0x030c8bd0)
+[03/17/2022 13:05:32] Adapter 1 with IP address 172.30.1.23 found but not used
+[03/17/2022 13:05:46] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:05:46] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:46]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:46] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:46] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/17/2022 13:05:46] Client E4-5F-01-7F-0E-1F is not configured
+[03/17/2022 13:05:46]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:46] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/17/2022 13:05:46] Perform auto configuration
+[03/17/2022 13:05:46] Client E4-5F-01-7F-0E-1F is not configured
+[03/17/2022 13:05:46] Perform auto configuration
+[03/17/2022 13:05:46] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:46] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:46] successfully matching the requested address
+[03/17/2022 13:05:46] successfully matching the requested address
+[03/17/2022 13:05:46] [03/17/2022 13:05:46] Auto configuration succeeded: IP-Addr = 192.168.50.101
+[03/17/2022 13:05:46] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:46] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:46] Sending a broadcast response to the client
+[03/17/2022 13:05:46] Connection 1: sending top queue packet
+[03/17/2022 13:05:46] Sending a broadcast response to the client
+[03/17/2022 13:05:46] Connection 1: sending top queue packet
+[03/17/2022 13:05:47] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:05:47] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:47]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:47] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/17/2022 13:05:47] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:47]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:47] Lookup client data for physical address "DC-A6-32-56-8C-F9" / client_id "DC-A6-32-56-8C-F9"
+[03/17/2022 13:05:47] Client DC-A6-32-56-8C-F9 is not configured
+[03/17/2022 13:05:47] Perform auto configuration
+[03/17/2022 13:05:47] Client DC-A6-32-56-8C-F9 is not configured
+[03/17/2022 13:05:47] Perform auto configuration
+[03/17/2022 13:05:47] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:47] successfully matching the requested address
+[03/17/2022 13:05:47] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:47] Auto configuration succeeded: IP-Addr = 192.168.50.103
+[03/17/2022 13:05:47] successfully matching the requested address
+[03/17/2022 13:05:47] Auto configuration succeeded: IP-Addr = 192.168.50.103
+[03/17/2022 13:05:48] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:48] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:48] Sending a broadcast response to the client
+[03/17/2022 13:05:48] Connection 1: sending top queue packet
+[03/17/2022 13:05:48] Sending a broadcast response to the client
+[03/17/2022 13:05:48] Connection 1: sending top queue packet
+[03/17/2022 13:05:48] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:05:48] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:48]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:48] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/17/2022 13:05:48] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:05:48] DHCP message = DHCPREQUEST
+[03/17/2022 13:05:48]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:05:48] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/17/2022 13:05:48] Client DC-A6-32-A7-E6-9C is not configured
+[03/17/2022 13:05:48] Perform auto configuration
+[03/17/2022 13:05:48] Client DC-A6-32-A7-E6-9C is not configured
+[03/17/2022 13:05:48] Perform auto configuration
+[03/17/2022 13:05:48] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:48] IPPOOL_1: 192.168.50.101-254
+[03/17/2022 13:05:48] successfully matching the requested address
+[03/17/2022 13:05:48] Auto configuration succeeded: IP-Addr = 192.168.50.102
+[03/17/2022 13:05:48] successfully matching the requested address
+[03/17/2022 13:05:48] Auto configuration succeeded: IP-Addr = 192.168.50.102
+[03/17/2022 13:05:49] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:49] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:05:49] Sending a broadcast response to the client
+[03/17/2022 13:05:49] Connection 1: sending top queue packet
+[03/17/2022 13:05:49] Sending a broadcast response to the client
+[03/17/2022 13:05:49] Connection 1: sending top queue packet
+[03/17/2022 13:17:42] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:17:42] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:17:42] DHCP message = DHCPREQUEST
+[03/17/2022 13:17:42]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:17:42] DHCP message = DHCPREQUEST
+[03/17/2022 13:17:42] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/17/2022 13:17:42] Client E4-5F-01-7F-0E-1F is configured with the IP address 192.168.50.101
+[03/17/2022 13:17:42]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:17:42] Lookup client data for physical address "E4-5F-01-7F-0E-1F" / client_id "E4-5F-01-7F-0E-1F"
+[03/17/2022 13:17:42] Client E4-5F-01-7F-0E-1F is configured with the IP address 192.168.50.101
+[03/17/2022 13:17:42] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:17:42] Sending a broadcast response to the client
+[03/17/2022 13:17:42] Connection 1: sending top queue packet
+[03/17/2022 13:17:43] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:17:43] Sending a broadcast response to the client
+[03/17/2022 13:17:43] Connection 1: sending top queue packet
+[03/17/2022 13:22:16] Adapter 1 has recognized an incoming DHCP request
+[03/17/2022 13:22:16] DHCP message = DHCPREQUEST
+[03/17/2022 13:22:16]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:22:16] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/17/2022 13:22:16] DHCP message = DHCPREQUEST
+[03/17/2022 13:22:16]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[03/17/2022 13:22:16] Lookup client data for physical address "DC-A6-32-A7-E6-9C" / client_id "DC-A6-32-A7-E6-9C"
+[03/17/2022 13:22:16] Client DC-A6-32-A7-E6-9C is configured with the IP address 192.168.50.102
+[03/17/2022 13:22:16] Client DC-A6-32-A7-E6-9C is configured with the IP address 192.168.50.102
+[03/17/2022 13:22:17] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:22:17] Response: hand out the configured IP address (lease time = 86400)
+[03/17/2022 13:22:17] Sending a broadcast response to the client
+[03/17/2022 13:22:17] Connection 1: sending top queue packet
+[03/17/2022 13:22:17] Sending a broadcast response to the client
+[03/17/2022 13:22:17] Connection 1: sending top queue packet
+[09/19/2023 11:28:04] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:28:04] NetworkAdapter Initialization returns 0
+[09/19/2023 11:28:04] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:31:14] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:31:14] recvfrom returns with error 10038
+[09/19/2023 11:31:14] DHCP Server terminated
+[09/19/2023 11:31:14] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:31:14] NetworkAdapter Initialization returns 0
+[09/19/2023 11:31:14] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe1260)
+[09/19/2023 11:31:14] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:31:55] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:31:55] recvfrom returns with error 10038
+[09/19/2023 11:31:55] DHCP Server terminated
+[09/19/2023 11:31:55] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:31:55] NetworkAdapter Initialization returns 0
+[09/19/2023 11:31:55] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:31:58] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:31:58] recvfrom returns with error 10038
+[09/19/2023 11:31:58] DHCP Server terminated
+[09/19/2023 11:31:58] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:31:58] NetworkAdapter Initialization returns 0
+[09/19/2023 11:31:58] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:00] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:00] recvfrom returns with error 10038
+[09/19/2023 11:32:00] DHCP Server terminated
+[09/19/2023 11:32:00] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:00] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:00] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:06] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:06] recvfrom returns with error 10038
+[09/19/2023 11:32:06] DHCP Server terminated
+[09/19/2023 11:32:06] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:06] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:06] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe0598)
+[09/19/2023 11:32:06] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:12] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:12] recvfrom returns with error 10038
+[09/19/2023 11:32:12] DHCP Server terminated
+[09/19/2023 11:32:12] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:12] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:12] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:15] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:15] recvfrom returns with error 10038
+[09/19/2023 11:32:15] DHCP Server terminated
+[09/19/2023 11:32:15] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:15] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:15] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:18] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:18] recvfrom returns with error 10038
+[09/19/2023 11:32:18] DHCP Server terminated
+[09/19/2023 11:32:18] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:18] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:18] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:20] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:20] recvfrom returns with error 10038
+[09/19/2023 11:32:20] DHCP Server terminated
+[09/19/2023 11:32:20] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:20] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:20] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:32:27] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:32:27] recvfrom returns with error 10038
+[09/19/2023 11:32:27] DHCP Server terminated
+[09/19/2023 11:32:27] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:32:27] NetworkAdapter Initialization returns 0
+[09/19/2023 11:32:27] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe0598)
+[09/19/2023 11:32:27] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:34:32] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:34:32] recvfrom returns with error 10038
+[09/19/2023 11:34:32] DHCP Server terminated
+[09/19/2023 11:34:32] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:34:32] NetworkAdapter Initialization returns 0
+[09/19/2023 11:34:32] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:34:38] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:34:38] recvfrom returns with error 10038
+[09/19/2023 11:34:38] DHCP Server terminated
+[09/19/2023 11:34:38] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:34:38] NetworkAdapter Initialization returns 0
+[09/19/2023 11:34:38] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe0598)
+[09/19/2023 11:34:38] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:34:39] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:34:39] DHCP message = DHCPDISCOVER
+[09/19/2023 11:34:39]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:34:39] Lookup client data for physical address "E4-5F-01-7F-0E-4A" / client_id "E4-5F-01-7F-0E-4A"
+[09/19/2023 11:34:39] Client E4-5F-01-7F-0E-4A is not configured
+[09/19/2023 11:34:39] Perform auto configuration
+[09/19/2023 11:34:39] IPPOOL_1: 192.168.50.101-254
+[09/19/2023 11:34:39] successfully matching the requested address
+[09/19/2023 11:34:39] Auto configuration succeeded: IP-Addr = 192.168.50.101
+[09/19/2023 11:34:39] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:34:39] Sending a broadcast response to the client
+[09/19/2023 11:34:39] Connection 1: sending top queue packet
+[09/19/2023 11:34:39] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:34:39] DHCP message = DHCPREQUEST
+[09/19/2023 11:34:39]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:34:39] Lookup client data for physical address "E4-5F-01-7F-0E-4A" / client_id "E4-5F-01-7F-0E-4A"
+[09/19/2023 11:34:39] Client E4-5F-01-7F-0E-4A is configured with the IP address 192.168.50.101
+[09/19/2023 11:34:39] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:34:39] Sending a broadcast response to the client
+[09/19/2023 11:34:39] Connection 1: sending top queue packet
+[09/19/2023 11:36:20] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:36:20] recvfrom returns with error 10038
+[09/19/2023 11:36:20] DHCP Server terminated
+[09/19/2023 11:36:20] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:36:20] NetworkAdapter Initialization returns 0
+[09/19/2023 11:36:20] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:36:26] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:36:26] recvfrom returns with error 10038
+[09/19/2023 11:36:26] DHCP Server terminated
+[09/19/2023 11:36:26] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:36:26] NetworkAdapter Initialization returns 0
+[09/19/2023 11:36:26] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:36:31] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:36:31] recvfrom returns with error 10038
+[09/19/2023 11:36:31] DHCP Server terminated
+[09/19/2023 11:36:31] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:36:31] NetworkAdapter Initialization returns 0
+[09/19/2023 11:36:31] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe0598)
+[09/19/2023 11:36:31] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:36:51] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:36:51] DHCP message = DHCPDISCOVER
+[09/19/2023 11:36:51]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:36:51] Lookup client data for physical address "E4-5F-01-75-A5-2F" / client_id "E4-5F-01-75-A5-2F"
+[09/19/2023 11:36:51] Client E4-5F-01-75-A5-2F is not configured
+[09/19/2023 11:36:51] Perform auto configuration
+[09/19/2023 11:36:51] IPPOOL_1: 192.168.50.101-254
+[09/19/2023 11:36:51] Auto configuration succeeded: IP-Addr = 192.168.50.102
+[09/19/2023 11:36:51] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:36:51] Sending a broadcast response to the client
+[09/19/2023 11:36:51] Connection 1: sending top queue packet
+[09/19/2023 11:36:51] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:36:51] DHCP message = DHCPREQUEST
+[09/19/2023 11:36:51]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:36:51] Lookup client data for physical address "E4-5F-01-75-A5-2F" / client_id "E4-5F-01-75-A5-2F"
+[09/19/2023 11:36:51] Client E4-5F-01-75-A5-2F is configured with the IP address 192.168.50.102
+[09/19/2023 11:36:52] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:36:52] Sending a broadcast response to the client
+[09/19/2023 11:36:52] Connection 1: sending top queue packet
+[09/19/2023 11:36:54] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:36:54] DHCP message = DHCPDISCOVER
+[09/19/2023 11:36:54]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:36:54] Lookup client data for physical address "E4-5F-01-75-A5-B9" / client_id "E4-5F-01-75-A5-B9"
+[09/19/2023 11:36:54] Client E4-5F-01-75-A5-B9 is not configured
+[09/19/2023 11:36:54] Perform auto configuration
+[09/19/2023 11:36:54] IPPOOL_1: 192.168.50.101-254
+[09/19/2023 11:36:54] Auto configuration succeeded: IP-Addr = 192.168.50.103
+[09/19/2023 11:36:54] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:36:54] Sending a broadcast response to the client
+[09/19/2023 11:36:54] Connection 1: sending top queue packet
+[09/19/2023 11:36:54] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:36:54] DHCP message = DHCPREQUEST
+[09/19/2023 11:36:54]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:36:54] Lookup client data for physical address "E4-5F-01-75-A5-B9" / client_id "E4-5F-01-75-A5-B9"
+[09/19/2023 11:36:54] Client E4-5F-01-75-A5-B9 is configured with the IP address 192.168.50.103
+[09/19/2023 11:36:54] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:36:54] Sending a broadcast response to the client
+[09/19/2023 11:36:54] Connection 1: sending top queue packet
+[09/19/2023 11:37:45] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:37:45] recvfrom returns with error 10038
+[09/19/2023 11:37:45] DHCP Server terminated
+[09/19/2023 11:37:45] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:37:45] NetworkAdapter Initialization returns 0
+[09/19/2023 11:37:45] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:37:52] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:37:52] recvfrom returns with error 10038
+[09/19/2023 11:37:52] DHCP Server terminated
+[09/19/2023 11:37:52] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:37:52] NetworkAdapter Initialization returns 0
+[09/19/2023 11:37:52] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00fe0598)
+[09/19/2023 11:37:52] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:40:42] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:40:42] recvfrom returns with error 10038
+[09/19/2023 11:40:42] DHCP Server terminated
+[09/19/2023 11:40:43] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:40:43] NetworkAdapter Initialization returns 0
+[09/19/2023 11:40:43] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00f23fa8)
+[09/19/2023 11:40:43] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:43:11] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:43:11] recvfrom returns with error 10038
+[09/19/2023 11:43:11] DHCP Server terminated
+[09/19/2023 11:43:14] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:43:14] NetworkAdapter Initialization returns 0
+[09/19/2023 11:43:14] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00513fa8)
+[09/19/2023 11:43:14] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:43:40] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:43:40] recvfrom returns with error 10038
+[09/19/2023 11:43:40] DHCP Server terminated
+[09/19/2023 11:43:40] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:43:40] NetworkAdapter Initialization returns 0
+[09/19/2023 11:43:40] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:43:48] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:43:48] recvfrom returns with error 10038
+[09/19/2023 11:43:48] DHCP Server terminated
+[09/19/2023 11:43:48] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:43:48] NetworkAdapter Initialization returns 0
+[09/19/2023 11:43:48] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:43:54] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:43:54] recvfrom returns with error 10038
+[09/19/2023 11:43:54] DHCP Server terminated
+[09/19/2023 11:43:54] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:43:54] NetworkAdapter Initialization returns 0
+[09/19/2023 11:43:54] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00513348)
+[09/19/2023 11:43:54] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:44:15] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 11:44:15] recvfrom returns with error 10038
+[09/19/2023 11:44:15] DHCP Server terminated
+[09/19/2023 11:44:16] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 11:44:16] NetworkAdapter Initialization returns 0
+[09/19/2023 11:44:16] Adapter 0 with IP address 192.168.50.10 found (pAdap=0x00e33fa8)
+[09/19/2023 11:44:16] Adapter 1 with IP address 172.30.1.86 found but not used
+[09/19/2023 11:44:30] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:30] DHCP message = DHCPDISCOVER
+[09/19/2023 11:44:30]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:30] Lookup client data for physical address "E4-5F-01-7F-0E-4A" / client_id "E4-5F-01-7F-0E-4A"
+[09/19/2023 11:44:30] Client E4-5F-01-7F-0E-4A is configured with the IP address 192.168.50.101
+[09/19/2023 11:44:30] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:44:30] Sending a broadcast response to the client
+[09/19/2023 11:44:30] Connection 1: sending top queue packet
+[09/19/2023 11:44:30] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:30] DHCP message = DHCPREQUEST
+[09/19/2023 11:44:30]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:30] Lookup client data for physical address "E4-5F-01-7F-0E-4A" / client_id "E4-5F-01-7F-0E-4A"
+[09/19/2023 11:44:30] Client E4-5F-01-7F-0E-4A is configured with the IP address 192.168.50.101
+[09/19/2023 11:44:30] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:44:30] Sending a broadcast response to the client
+[09/19/2023 11:44:30] Connection 1: sending top queue packet
+[09/19/2023 11:44:31] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:31] DHCP message = DHCPDISCOVER
+[09/19/2023 11:44:31]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:31] Lookup client data for physical address "E4-5F-01-75-A5-2F" / client_id "E4-5F-01-75-A5-2F"
+[09/19/2023 11:44:31] Client E4-5F-01-75-A5-2F is configured with the IP address 192.168.50.103
+[09/19/2023 11:44:31] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:44:31] Sending a broadcast response to the client
+[09/19/2023 11:44:31] Connection 1: sending top queue packet
+[09/19/2023 11:44:31] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:31] DHCP message = DHCPREQUEST
+[09/19/2023 11:44:31]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:31] Lookup client data for physical address "E4-5F-01-75-A5-2F" / client_id "E4-5F-01-75-A5-2F"
+[09/19/2023 11:44:31] Client E4-5F-01-75-A5-2F is configured with the IP address 192.168.50.103
+[09/19/2023 11:44:31] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:44:31] Sending a broadcast response to the client
+[09/19/2023 11:44:31] Connection 1: sending top queue packet
+[09/19/2023 11:44:31] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:31] DHCP message = DHCPDISCOVER
+[09/19/2023 11:44:31]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:31] Lookup client data for physical address "E4-5F-01-75-A5-B9" / client_id "E4-5F-01-75-A5-B9"
+[09/19/2023 11:44:31] Client E4-5F-01-75-A5-B9 is configured with the IP address 192.168.50.102
+[09/19/2023 11:44:31] Response: offer the configured IP address (lease time = 86400)
+[09/19/2023 11:44:31] Sending a broadcast response to the client
+[09/19/2023 11:44:31] Connection 1: sending top queue packet
+[09/19/2023 11:44:31] Adapter 1 has recognized an incoming DHCP request
+[09/19/2023 11:44:31] DHCP message = DHCPREQUEST
+[09/19/2023 11:44:31]    requested options: 1 3 6 12 15 26 28 33 51 54 58 59 119 121
+[09/19/2023 11:44:31] Lookup client data for physical address "E4-5F-01-75-A5-B9" / client_id "E4-5F-01-75-A5-B9"
+[09/19/2023 11:44:31] Client E4-5F-01-75-A5-B9 is configured with the IP address 192.168.50.102
+[09/19/2023 11:44:31] Response: hand out the configured IP address (lease time = 86400)
+[09/19/2023 11:44:31] Sending a broadcast response to the client
+[09/19/2023 11:44:31] Connection 1: sending top queue packet
+[09/19/2023 12:41:14] DHCP Server is terminating (ignore error messages that follow)
+[09/19/2023 12:41:14] recvfrom returns with error 10038
+[09/19/2023 12:41:14] DHCP Server terminated
+[09/19/2023 12:41:14] DHCP Server V2.5.2.3 started as Service
+[09/19/2023 12:41:14] NetworkAdapter Initialization returns 0
+[09/19/2023 12:41:14] Adapter 0 with IP address 172.30.1.86 found but not used
