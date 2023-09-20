@@ -9,4 +9,6 @@
 - <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/940e679f-5cfb-465a-adc5-d8bd233ea4b8" width="500">
 - 09/19 화 : 하둡 설치 / WordCount / 파일 업로드 
 - <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/f33cbb82-b544-47d0-b6b6-f3fae258aabb" width="700">
+- 09/20 수 : WordCount 실습 / WordCloud Python 실습
+- <img src="https://github.com/Jang-jw/distributedProcessing/assets/134268098/46f535f3-73ef-46d2-9835-bbfa098a8be8" width="700">
 
