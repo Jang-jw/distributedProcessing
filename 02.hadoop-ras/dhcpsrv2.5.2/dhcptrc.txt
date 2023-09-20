@@ -704,3 +704,16 @@
 [09/20/2023 11:46:23] DHCP Server V2.5.2.3 started as Service
 [09/20/2023 11:46:23] NetworkAdapter Initialization returns 0
 [09/20/2023 11:46:23] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/20/2023 12:28:19] DHCP Server is terminating (ignore error messages that follow)
+[09/20/2023 12:28:19] recvfrom returns with error 10038
+[09/20/2023 12:28:19] DHCP Server terminated
+[09/20/2023 12:28:19] DHCP Server V2.5.2.3 started as Service
+[09/20/2023 12:28:19] NetworkAdapter Initialization returns 0
+[09/20/2023 12:28:19] Adapter 0 with IP address 172.30.1.86 found but not used
+[09/20/2023 12:28:23] DHCP Server is terminating (ignore error messages that follow)
+[09/20/2023 12:28:23] recvfrom returns with error 10038
+[09/20/2023 12:28:23] DHCP Server terminated
+[09/20/2023 12:28:23] DHCP Server V2.5.2.3 started as Service
+[09/20/2023 12:28:23] NetworkAdapter Initialization returns 0
+[09/20/2023 12:28:23] Adapter 0 with IP address 192.168.56.1 found but not used
+[09/20/2023 12:28:23] Adapter 1 with IP address 172.30.1.86 found but not used
