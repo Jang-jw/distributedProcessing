@@ -1,0 +1,237 @@
+C:\Users\SM003\VirtualBox VMs
+->
+D:\VirtualBox VMs
+
+--  확인할것
+64bit  운영
+fasoo
+
+-- 부팅후 접속
+-- putty 설정
+server01.hadoop.com  server01
+server02.hadoop.com  server02
+server03.hadoop.com  server03
+
+bigdata / bigdata
+
+-- PC 컴퓨터 환경설정
+-- hosts 파일을 메모장의 관리자 권한으로 실행 후 내용 추가할것
+C:\Windows\System32\drivers\etc\hosts
+
+192.168.56.101   server01.hadoop.com
+192.168.56.102   server02.hadoop.com
+192.168.56.103   server03.hadoop.com
+
+
+--1. 네트워크 설정 파일
+nano /etc/sysconfig/network-scripts/ifcfg-eth0
+nano /etc/udev/rules.d/70-persistent-net.rules
+
+-- cloudera Manager 접속
+http://server01.hadoop.com:7180/
+  admin / admin
+
+---------------------------
+-- 2. wordcount 실행
+-- 2-1 file upload
+--  서버접속: server01.hadoop.com
+
+         계정  bigdata / bigdata
+     1) 분석용 데이터 *.txt
+     2) mapreduce-0.0.1-SNAPSHOT.jar
+     3) hdfs dfs -mkdir -p /aysdat
+     4) hdfs dfs -put ~/*.txt /aysdat
+
+-- Hadoop 접속	 
+http://server01.hadoop.com:9870/
+	 
+-- 2-2 WordCount 실행
+yarn jar mapreduce-0.0.1-SNAPSHOT.jar bigdata.mapreduce.WordCount /Aysdata/*.txt /wcount
+
+---------------------------
+-- 3.Smart Car 실습
+-- 3.1 스마트카 실행전 초기화 작업
+server02.hadoop.com
+   root / adminuser
+   
+-- 실습 초기화 
+cd /home/pilot-pjt/working/
+
+rm -rf ./driver-realtime-log/*
+rm -rf ./car-batch-log/*
+rm -rf ./SmartCar/*
+
+-- 지워진 경우 다시 생성
+cd /home/pilot-pjt/working
+
+mkdir -p ./driver-realtime-log
+mkdir -p ./car-batch-log
+mkdir -p ./SmartCar
+
+/pilot-pjt/collect/car-batch-log/wrk_date=20230828/
+
+--3.2 스마트카 로그 데이터 생성 및 확인
+-- 1) 스마트카 실시간data 생성(운전자 운전 상태정보)
+java -cp bigdata.smartcar.loggen-1.0.jar com.wikibook.bigdata.smartcar.loggen.DriverLogMain 20230922 100
+
+cd /home/pilot-pjt/working/driver-realtime-log
+
+tail -f  /home/pilot-pjt/working/driver-realtime-log/SmartCarDriverInfo.log
+
+-- 2) 스마트카 1일 배치 data 생성(대용량데이터: 차량상태정보)
+java -cp bigdata.smartcar.loggen-1.0.jar com.wikibook.bigdata.smartcar.loggen.CarLogMain 20230922 100
+
+tail -f  /home/pilot-pjt/working/SmartCar/SmartCarStatusInfo_20230922.txt 
+
+ps -ef |grep bigdata
+kill -9 12667 5712 1234 4567 
+
+--4. 차량상태 batch 데이터 하둡에 적재
+--4-1 배치 처리
+   -. flume 실행
+   -. kafka 실행
+--4-2 배치 처리
+-- agent를 구성 및 flume 실행
+cp /home/pilot-pjt/working/SmartCar/SmartCarStatusInfo_20230508.txt /home/pilot-pjt/working/car-batch-log 
+
+tail -f /var/log/flume-ng/flume-cmf-flume-AGENT-server02.hadoop.com.log
+
+---------------------------
+1. 플룸 구동
+2. 차량의 상태정보 로그파일 생성
+3. car-batch-log 디렉토리에 로그파일 복사
+4. 플룸 로그파일 확인
+5. 하둡에서 적재된 파일 확인..
+
+-- 실시간
+1. 카프카 실행
+2. 카프카 콘솔 실행: 실행 메시지 확인
+3. 스톰 실행
+4. 데이터 생성 
+
+---------------------------
+--5. 운전자 상태 실시간 데이터 처리
+--5-1.Flume, 카프카 실습
+>> kafka producer 실행
+kafka-console-producer --broker-list server02.hadoop.com:9092 --topic SmartCar-Topic
+
+>> kafka consumer 실행
+kafka-console-consumer --bootstrap-server server02.hadoop.com:9092 --topic SmartCar-Topic --partition 0 --from-beginning
+
+-- 스톰 실행
+service storm-nimbus start
+service storm-supervisor start
+service storm-ui start
+-- 실행 확인
+http://server02.hadoop.com:8087/
+
+service storm-nimbus status
+service storm-supervisor status
+service storm-ui status
+
+---------------------------
+-- 5.HBase
+$ hbase shell
+hbase(main):001:0>count 'DriverCarInfo'
+hbase(main):001:0>scan 'DriverCarInfo', {LIMIT=>20}
+hbase(main):001:0>scan 'DriverCarInfo', {STARTROW=>' 00000080503202-V0005', LIMIT=>1}
+
+---
+count 'DriverCarInfo', {FILTER=>"RowFilter(=,'regexstring:80503202')"}
+scan 'DriverCarInfo', {FILTER=>"RowFilter(=,'regexstring:80503202')", LIMIT=>20}
+---
+
+hbase(main):001:0> scan 'DriverCarInfo', {COLUMNS=>['cf1:car_number','cf1.area_number'],FILTER=>"RowFilter(=,'regexstring:80503202') AND SingleColumnValueFilter('cf1','area_number', = , 'regexstring:D04' )"}
+
+---------------------------
+-- 6.HUE,Hive, Impala 실습
+-- hive
+-- Hive을 통한 데이터 탐색
+drop table if exists SmartCar_Status_Info;
+
+create external table if not exists SmartCar_Status_Info (
+	reg_date string,
+	car_number string,
+	tire_fl string,
+	tire_fr string,
+	tire_bl string,
+	tire_br string,
+	light_fl string,
+	light_fr string,
+	light_bl string,
+	light_br string,
+	engine string,
+	break string,
+	battery string
+)
+partitioned by( wrk_date string )
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/pilot-pjt/collect/car-batch-log/'
+
+------------------------------
+ALTER TABLE SmartCar_Status_Info ADD PARTITION(wrk_date='20230922');
+
+------------------------------
+select * from SmartCar_Status_Info limit 5;
+
+------------------------------
+select car_number, avg(battery) as battery_avg
+from SmartCar_Status_Info
+where battery < 60
+group by car_number;
+
+------------------------------
+--SmartCar_Master
+
+CREATE EXTERNAL TABLE SmartCar_Master (
+car_number string,
+sex string,
+age string,
+marriage string,
+region string,
+job string,
+car_capacity string,
+car_year string,
+car_model string
+)
+row format delimited
+fields terminated by '|'
+stored as textfile
+location '/pilot-pjt/collect/CarMaster/CarMaster.txt' 
+
+------------------------------
+drop table SmartCar_Drive_Info
+
+-- 차량번호, 생산년도, 차량용량(cc), 엔진상태, 브레이크, 밧데리상태를 조회하시오.. 
+
+select a.car_number, b.car_year,
+       b.car_capacity,  a.engine, a.break,
+	   a.battery
+from smartcar_status_info a, smartcar_master b
+where a.car_number = b.car_number 
+;
+
+-- 차량별 평균 밧데리 잔량
+select a.car_number, b.car_year, b.car_capacity,  
+	   avg(a.battery)
+from smartcar_status_info a, smartcar_master b
+where a.car_number = b.car_number 
+group by a.car_number, b.car_year, b.car_capacity
+;
+
+------------------------------
+-- server01.hadoop.com 접속
+-- mysl to hive 확인
+sqoop import \
+--connect jdbc:mysql://172.30.1.32:3306/smhrd_db \
+--username root \
+--password 0000 \
+--table stduser \
+--hive-import \
+--hive-overwrite \
+-m 1
+
+-- 하둡에서 확인..
+/user/사용자계정/UpLoad 자료생성

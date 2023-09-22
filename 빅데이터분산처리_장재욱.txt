@@ -1,0 +1,69 @@
+===========================================
+1.과정명 : 빅데이터 분석서비스 개발자 과정
+2.교육기간: 2023.02.20 ~ 2023.08.09
+3.시험일시: 2023.06.30 16:50 - 17:50
+4.답안파일: 빅데이터분산처리_장재욱 
+5.수험생 : 장재욱 
+6.답안제출: test@smhrd.or.kr
+===========================================
+[Question 1]
+  문제 1-1    답: ③
+  문제 1-2    답: ④
+  문제 1-3    답: ㉠ a.      ㉡ b.      ㉢ c.      ㉣ d. 
+
+[Question 2]
+  문제 2-1    답: ②
+  문제 2-2    답: ③
+  문제 2-3    답: ③
+  문제 2-4    답: 
+        1단계 : 탐색 
+        2단계 : 적재 
+  문제 2-5    답: Flume 
+  문제 2-6    답: Hbase, Hive, MapReduce, Impala 
+
+[Question 3]
+  문제 3-1
+  답:  ① hostname 
+        ② logname 
+        ③ whoami 
+  문제 3-2    
+  답:   ① hdfs dfs -ifconfig 
+        ② hdfs dfs -pwd 
+        ③ hdfs dfs -ls 
+  문제 3-3    
+  답:  ① hdfs dfs -adduser hadoop 
+        ② hdfs dfs -mkdir /my-hdfs 
+        ③ hdfs dfs -cd /my-hdfs 
+  문제 3-4    
+  답:  ① start-dfs.sh && start-yarn.sh (=) start-all.sh 
+        ② http://server01.hadoop.com:7180
+  문제 3-5
+  답:  ① FileZilla 
+        ② PuTTy
+  문제 3-6    
+  답:  ① 2개 
+        ② 192.168.50.102 , 192.168.50.103 
+        ③ default-rack/worker01 , default-rack/worker02 
+  문제 3-7
+  답:  ① hdfs dfs -ls / 
+        ② hdfs dfs -ls /temp 
+  문제 3-8
+  답:  ① hdfs dfs -put ./test.txt /temp/ 
+        ② hdfs dfs -ls /temp/test.txt 
+  문제 3-9
+  답:  ① 64MB 
+        ② 
+  문제 3-10    답 : pom.xml 
+  문제 3-11
+  답:  ① Map phase 
+        ② Intermediate files 
+        ③ Reduce phase 
+  문제 3-12  답 : 
+
+[Question 4]
+  문제 4-1    답: ④ 
+  문제 4-2    답: ① 
+
+[Question 5]
+  문제 5-1    답: ③
+  문제 5-2    답:
